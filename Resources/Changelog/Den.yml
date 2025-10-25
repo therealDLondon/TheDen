@@ -13429,3 +13429,234 @@ Entries:
   id: 1312
   time: '2025-10-21T17:12:09.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1906
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the white cyberjacket to be colorable! You can finally apply a
+        custom paintjob to your sleek cropped jacket!
+  id: 1313
+  time: '2025-10-21T18:26:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1917
+- author: portfiend
+  changes:
+    - type: Add
+      message: A colorable beret can now be found in loadouts.
+  id: 1314
+  time: '2025-10-21T18:27:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1915
+- author: Swiss_Fox
+  changes:
+    - type: Remove
+      message: De-Rotates Barrier Hospital from the map pool, pending rework
+  id: 1315
+  time: '2025-10-21T18:27:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1916
+- author: Simyon and SlamBamActionman
+  changes:
+    - type: Add
+      message: >-
+        Admins can now change the values of damage and healing items globally
+        through a command. This is specifically for testing purposes.
+  id: 1316
+  time: '2025-10-22T00:39:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1913
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: >-
+        Added icons and descriptions to the Document Printer to look a little
+        more professional.
+  id: 1317
+  time: '2025-10-22T05:45:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1920
+- author: AvianMaiden
+  changes:
+    - type: Tweak
+      message: Suit storage tanks are now strap-off.
+  id: 1318
+  time: '2025-10-22T08:27:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1921
+- author: phantasai
+  changes:
+    - type: Tweak
+      message: Resprited & renamed the CMO's hypospray
+    - type: Tweak
+      message: Resprited & renamed the Syndicate's hypospray
+    - type: Tweak
+      message: Resprited the Jet Injector
+  id: 1319
+  time: '2025-10-23T08:00:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1923
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added multi-tools to command lockers.
+  id: 1320
+  time: '2025-10-23T09:52:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1925
+- author: KekaniCreates
+  changes:
+    - type: Tweak
+      message: Moved most of the Document Printer files to _DEN.
+    - type: Add
+      message: >-
+        Added paper colors to all of the papers in the Document Printer to be
+        more unique.
+    - type: Fix
+      message: Added icons to the Syndicate papers in the Document Printer. Oops!
+  id: 1321
+  time: '2025-10-23T16:52:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1924
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added fun!
+    - type: Tweak
+      message: Changed fun!
+  id: 1322
+  time: '2025-10-23T16:59:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1928
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added 10k spesos salvage points exchange!
+  id: 1323
+  time: '2025-10-23T17:04:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1927
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Added CE belt to the their hardsuit locker.
+  id: 1324
+  time: '2025-10-23T17:04:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1926
+- author: annthedino
+  changes:
+    - type: Tweak
+      message: >-
+        All shadowkin tails now properly fit under clothing! Please note,
+        missing legs will still show gaps in the sprites.
+  id: 1325
+  time: '2025-10-23T17:10:05.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1919
+- author: Cutinup99
+  changes:
+    - type: Add
+      message: Lanterns can now be printed from most lathes!
+  id: 1326
+  time: '2025-10-24T01:48:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1932
+- author: Dirius77
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for jobs to have alternative titles which may be
+        selected in the jobs tab!
+  id: 1327
+  time: '2025-10-24T05:56:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1935
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Plenty of new job titles to choose from were added!
+  id: 1328
+  time: '2025-10-24T11:16:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1936
+- author: phantasai
+  changes:
+    - type: Add
+      message: Added Compact Defibrillator to the loadout of the CMO.
+    - type: Add
+      message: >-
+        Portafib & Compact Defibrillator can now be researched and printed at
+        the medical techfab
+    - type: Tweak
+      message: Slightly altered the description of the Compact Defibrillator
+  id: 1329
+  time: '2025-10-24T11:23:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1930
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added Xenoglossy to Ifrit
+    - type: Add
+      message: Added Flare to Ifrit
+    - type: Tweak
+      message: Ifrit now has passive HP regen
+    - type: Tweak
+      message: Increased Ifrits HP from 120 => 200
+    - type: Tweak
+      message: Ifrit will re-register as a ghost role if the player abandons it.
+  id: 1330
+  time: '2025-10-24T11:24:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1929
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Administrative Assistants get an alternative job title of "Unpaid
+        Intern".
+  id: 1331
+  time: '2025-10-24T19:30:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1940
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Candy cigarettes actually burn through their contents now - like other
+        cigarettes, they will eventually run out.
+  id: 1332
+  time: '2025-10-24T19:32:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1937
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added more job titles!
+    - type: Remove
+      message: Removed some job titles!
+  id: 1333
+  time: '2025-10-25T00:39:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1942
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Captain and Head of Security are now whitelisted.
+    - type: Tweak
+      message: >-
+        Warden is 20 hours of Security, any role and like 3 hours of detective
+        to make sure you have it played at least once + 50 hours of overall
+        playtime (you can become HoS as Warden, it's really only fair)
+    - type: Tweak
+      message: >-
+        Corpsman now requires 7 hours of general medical time, 15 hours of
+        general security time, 20 hours of overall time.
+    - type: Tweak
+      message: >-
+        Detective now requires 7 hours of security general time, 20 hours of
+        overall time.
+    - type: Tweak
+      message: >-
+        Security officer now requires15 hours of overall playtime, 6 hours as
+        cadet.
+    - type: Tweak
+      message: Cadet requires 15 hours of overall playtime.
+  id: 1334
+  time: '2025-10-25T03:12:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1549
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Unathi now have four new markings: floppy ears, cheek tufts, furred
+        tail, and short (recolorable) horns. 
+  id: 1335
+  time: '2025-10-25T04:23:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1939
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Candy Cigarette Last Forever Again
+  id: 1336
+  time: '2025-10-25T06:57:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1945

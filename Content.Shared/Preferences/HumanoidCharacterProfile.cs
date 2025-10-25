@@ -27,6 +27,7 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Spatison
@@ -77,6 +78,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             SharedGameTicker.FallbackOverflowJob, JobPriority.High
         },
     };
+
+    [DataField]
+    private Dictionary<string, string> _jobTitles = new();
 
     /// Antags we have opted in to
     [DataField]
@@ -177,6 +181,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <see cref="_jobPriorities"/>
     public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
 
+    public IReadOnlyDictionary<string, string> JobTitles => _jobTitles;
+
     /// <see cref="_antagPreferences"/>
     public IReadOnlySet<string> AntagPreferences => _antagPreferences;
 
@@ -218,6 +224,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<string, string> jobTitles, // DEN - Alternate job titles
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
@@ -249,6 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
+        _jobTitles = jobTitles;
         _jobPriorities = jobPriorities;
         Clothing = clothing;
         Backpack = backpack;
@@ -286,6 +294,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            new(other.JobTitles),
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
@@ -451,6 +460,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _jobPriorities = dictionary };
     }
 
+    public HumanoidCharacterProfile WithJobTitles(Dictionary<string, string> jobTitles) =>
+        new(this) { _jobTitles = jobTitles };
+
+    public HumanoidCharacterProfile WithJobTitle(string jobId, string jobTitle)
+    {
+        var dictionary = new Dictionary<string, string>(_jobTitles);
+
+        // ReSharper disable once CanSimplifyDictionaryRemovingWithSingleCall
+        if (dictionary.ContainsKey(jobId))
+            dictionary.Remove(jobId);
+
+        if (!string.IsNullOrWhiteSpace(jobTitle) && jobTitle != jobId)
+            dictionary[jobId] = jobTitle;
+
+        return new(this) { _jobTitles = dictionary };
+    }
+
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
         new(this) { PreferenceUnavailable = mode };
     public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
@@ -541,6 +567,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _jobTitles.SequenceEqual(other._jobTitles)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
@@ -696,6 +723,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                 _ => false
             }));
 
+        var titles = new Dictionary<string, string>(
+            JobTitles
+                .Where(t => prototypeManager.TryIndex<JobPrototype>(t.Key, out var job) && job.SetPreference &&
+                    t.Value != job.ID));
+
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
             .Distinct()
@@ -726,6 +758,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         foreach (var (job, priority) in priorities)
         {
             _jobPriorities.Add(job, priority);
+        }
+
+        _jobTitles.Clear();
+
+        foreach (var (job, title) in titles)
+        {
+            _jobTitles.Add(job, title);
         }
 
         PreferenceUnavailable = prefsUnavailableMode;
